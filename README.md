@@ -5,7 +5,7 @@ SMS App Setup
 
 Working setup requires `git`, `rails` and `postgres` pre-installed.
 
-## Setting up the SMS App
+## Setting up the SMS App   
 
 Clone and move into repository
 

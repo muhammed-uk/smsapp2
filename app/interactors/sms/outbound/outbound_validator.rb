@@ -20,7 +20,7 @@ module Sms
         cached_data = Rails.cache.read(cache_key)
         return unless cached_data.present?
 
-        if cached_data[:count] <= 50
+        if cached_data[:count] <= OUTBOUND_REQ_LIMIT.to_i
           remaining_time = (cached_data[:expires_in] - Time.now).round
           Rails.cache.write(cache_key,
                             { count: cached_data[:count] + 1,
