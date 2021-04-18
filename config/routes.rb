@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     post '/outbound/sms', to: 'sms#outbound'
   end
 
-  match '/*path',
+  match '(/)*path',
         to: proc { [405, {}, []] },
         via: %i[get post put patch delete]
 end

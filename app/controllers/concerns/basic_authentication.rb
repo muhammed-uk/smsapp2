@@ -16,9 +16,7 @@ private
   def authenticate_user!
     authenticate_or_request_with_http_basic do |username, password|
       @current_user = Account.find_by(username: username)
-      return true if current_user.try(:auth_id) == password
-
-      false
+      current_user && current_user.auth_id == password
     end
   end
 end
